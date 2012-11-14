@@ -17,8 +17,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *weightLabel;
 
-- (IBAction)heightButton:(id)sender;
-- (IBAction)weightButton:(id)sender;
+- (IBAction)submitButton:(id)sender;
 - (IBAction)milestonesButton:(id)sender;
-//Just testing
+
 @end

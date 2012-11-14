@@ -48,10 +48,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)heightButton:(id)sender {
-    
+void submitAll(UITextField *ageTextFIeld, UITextField *heightTextField, UILabel *heightLabel, UITextField *weightTextField, UILabel *weightLabel) {
     int ageInt = [ageTextFIeld.text intValue];
     int heightInt = [heightTextField.text intValue];
+    int weightInt = [weightTextField.text intValue];
+
     
     if(ageInt == 0){
         
@@ -72,6 +73,24 @@
                 heightLabel.text = @"6 th Percentile";
                 break;
         }
+        switch(weightInt){
+            case 15:
+                weightLabel.text = @"2 nd Percentile";
+                break;
+            case 16:
+                weightLabel.text = @"3 rd Percentile";
+                break;
+            case 17:
+                weightLabel.text = @"4 th Percentile";
+                break;
+            case 18:
+                weightLabel.text = @"5 th Percentile";
+                break;
+            case 19:
+                weightLabel.text = @"6 th Percentile";
+                break;
+        }
+
         
     }
     
@@ -95,40 +114,6 @@
                 break;
         }
         
-    }
- 
-    
-}
-
-- (IBAction)weightButton:(id)sender {
-    
-    int ageInt = [ageTextFIeld.text intValue];
-    int weightInt = [weightTextField.text intValue];
-    
-    if(ageInt == 0){
-        
-        switch(weightInt){
-            case 15:
-                weightLabel.text = @"2 nd Percentile";
-                break;
-            case 16:
-                weightLabel.text = @"3 rd Percentile";
-                break;
-            case 17:
-                weightLabel.text = @"4 th Percentile";
-                break;
-            case 18:
-                weightLabel.text = @"5 th Percentile";
-                break;
-            case 19:
-                weightLabel.text = @"6 th Percentile";
-                break;
-        }
-        
-    }
-    
-    if(ageInt == 1){
-        
         switch(weightInt){
             case 15:
                 weightLabel.text = @"7 th Percentile";
@@ -148,7 +133,12 @@
         }
         
     }
+}
 
+- (IBAction)submitButton:(id)sender {
+    
+    submitAll(ageTextFIeld, heightTextField, heightLabel, weightTextField, weightLabel);
+ 
     
 }
 
