@@ -1,9 +1,9 @@
 //
 //  AppDelegate.h
-//  MedApp
+//  App2
 //
-//  Created by Ryan Huynh on 11/12/12.
-//  Copyright (c) 2012 Ryan Huynh. All rights reserved.
+//  Created by Eiling Fernandez on 11/11/12.
+//  Copyright (c) 2012 UCI. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

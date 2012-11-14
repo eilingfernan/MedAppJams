@@ -1,23 +1,171 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2519" systemVersion="12A206j" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C3006" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1856"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--View Controller-->
         <scene sceneID="4">
             <objects>
                 <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5">
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" image="babyoutline.png" translatesAutoresizingMaskIntoConstraints="NO" id="UmK-hq-NNC"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UDv-yq-O9I">
+                                <items>
+                                    <navigationItem title="App" id="QYa-6s-gXK"/>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C6p-b1-N1a">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="A5G-3W-gMM"/>
+                                    <constraint firstAttribute="width" constant="97" id="hX6-Sr-iSz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Age(month):" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fQ-YJ-TM8">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="Bg2-zG-4jA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VqN-CZ-dqx">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Height(in):" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CcH-q3-Z5k">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Weight(lbs):" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RdO-1D-LeX">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lso-Ty-xfR">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Percentiles" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eon-iH-ugt">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="0Pa-jv-Pbj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Height Percentile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Me-WB-Sgm">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="270" id="zJ4-xu-v4A"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Weight Percentile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFu-GM-gXn">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RMT-uM-16J">
+                                <items>
+                                    <barButtonItem title="Height Percentile" id="VSD-qW-99F">
+                                        <connections>
+                                            <action selector="heightButton:" destination="2" id="WzJ-cA-B6w"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="WoS-bl-M8V"/>
+                                    <barButtonItem title="Weight Percentile" id="Pdf-F7-pc2">
+                                        <connections>
+                                            <action selector="weightButton:" destination="2" id="hxB-Bt-SGN"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Tvk-6g-vNz"/>
+                                    <barButtonItem title="Milestones" id="vsZ-6E-TFd">
+                                        <connections>
+                                            <action selector="milestonesButton:" destination="2" id="e2y-xY-aHO"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UmK-hq-NNC" firstAttribute="bottom" secondItem="5" secondAttribute="bottom" type="default" id="1oi-Hy-6WC"/>
+                            <constraint firstItem="RMT-uM-16J" firstAttribute="bottom" secondItem="5" secondAttribute="bottom" type="default" id="7YD-hP-Ek6"/>
+                            <constraint firstItem="VqN-CZ-dqx" firstAttribute="leading" secondItem="C6p-b1-N1a" secondAttribute="leading" type="default" id="8Vv-I6-D0R"/>
+                            <constraint firstItem="1fQ-YJ-TM8" firstAttribute="trailing" secondItem="CcH-q3-Z5k" secondAttribute="trailing" type="default" id="Bjz-kA-nVs"/>
+                            <constraint firstItem="C6p-b1-N1a" firstAttribute="top" secondItem="5" secondAttribute="top" constant="68" id="Btp-g8-eke"/>
+                            <constraint firstItem="CcH-q3-Z5k" firstAttribute="top" secondItem="5" secondAttribute="top" constant="115" id="CSl-03-OGK"/>
+                            <constraint firstItem="UDv-yq-O9I" firstAttribute="leading" secondItem="5" secondAttribute="leading" type="default" id="CxY-d2-V7a"/>
+                            <constraint firstAttribute="trailing" secondItem="aFu-GM-gXn" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="F9y-4o-Ajf"/>
+                            <constraint firstItem="eon-iH-ugt" firstAttribute="baseline" secondItem="C6p-b1-N1a" secondAttribute="baseline" type="default" id="HWt-RI-bOq"/>
+                            <constraint firstItem="9Me-WB-Sgm" firstAttribute="baseline" secondItem="CcH-q3-Z5k" secondAttribute="baseline" type="default" id="IYq-0L-XiZ"/>
+                            <constraint firstItem="VqN-CZ-dqx" firstAttribute="trailing" secondItem="C6p-b1-N1a" secondAttribute="trailing" type="default" id="N9L-iW-UHv"/>
+                            <constraint firstItem="RMT-uM-16J" firstAttribute="leading" secondItem="5" secondAttribute="leading" type="default" id="Txj-D7-Lxp"/>
+                            <constraint firstItem="UDv-yq-O9I" firstAttribute="trailing" secondItem="5" secondAttribute="trailing" type="default" id="Vr8-o7-Nkm"/>
+                            <constraint firstItem="CcH-q3-Z5k" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="WFo-kB-7mk"/>
+                            <constraint firstItem="C6p-b1-N1a" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="136" id="XIt-IS-zcw"/>
+                            <constraint firstItem="CcH-q3-Z5k" firstAttribute="trailing" secondItem="RdO-1D-LeX" secondAttribute="trailing" type="default" id="YOw-jL-jUL"/>
+                            <constraint firstItem="aFu-GM-gXn" firstAttribute="leading" secondItem="9Me-WB-Sgm" secondAttribute="leading" type="default" id="ZZD-Sp-AwC"/>
+                            <constraint firstItem="1fQ-YJ-TM8" firstAttribute="top" secondItem="5" secondAttribute="top" constant="65" id="afk-jH-Wfn"/>
+                            <constraint firstItem="lso-Ty-xfR" firstAttribute="top" secondItem="RdO-1D-LeX" secondAttribute="top" type="default" id="cai-7R-70i"/>
+                            <constraint firstItem="VqN-CZ-dqx" firstAttribute="top" secondItem="5" secondAttribute="top" constant="111" id="fDD-ge-qOW"/>
+                            <constraint firstAttribute="trailing" secondItem="eon-iH-ugt" secondAttribute="trailing" constant="99" id="fJC-nh-Deg"/>
+                            <constraint firstItem="1fQ-YJ-TM8" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="fY0-aZ-A2z"/>
+                            <constraint firstItem="lso-Ty-xfR" firstAttribute="trailing" secondItem="VqN-CZ-dqx" secondAttribute="trailing" type="default" id="ijv-m7-a5v"/>
+                            <constraint firstItem="UmK-hq-NNC" firstAttribute="top" secondItem="5" secondAttribute="top" type="default" id="ju4-0S-n3O"/>
+                            <constraint firstItem="UmK-hq-NNC" firstAttribute="trailing" secondItem="5" secondAttribute="trailing" type="default" id="krx-qE-wiv"/>
+                            <constraint firstItem="C6p-b1-N1a" firstAttribute="top" secondItem="eon-iH-ugt" secondAttribute="top" type="default" id="m5D-Jc-LrP"/>
+                            <constraint firstItem="UDv-yq-O9I" firstAttribute="top" secondItem="5" secondAttribute="top" type="default" id="n8p-eX-Syb"/>
+                            <constraint firstItem="lso-Ty-xfR" firstAttribute="leading" secondItem="VqN-CZ-dqx" secondAttribute="leading" type="default" id="nbB-lo-8qk"/>
+                            <constraint firstItem="RMT-uM-16J" firstAttribute="trailing" secondItem="5" secondAttribute="trailing" type="default" id="pNi-dH-Gc3"/>
+                            <constraint firstItem="RdO-1D-LeX" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="sZK-cS-ZKq"/>
+                            <constraint firstItem="RdO-1D-LeX" firstAttribute="top" secondItem="5" secondAttribute="top" constant="157" id="t2S-68-YoV"/>
+                            <constraint firstItem="UmK-hq-NNC" firstAttribute="leading" secondItem="5" secondAttribute="leading" type="default" id="to6-xJ-BX9"/>
+                            <constraint firstItem="aFu-GM-gXn" firstAttribute="baseline" secondItem="RdO-1D-LeX" secondAttribute="baseline" type="default" id="vmC-tg-ctS"/>
+                            <constraint firstAttribute="trailing" secondItem="9Me-WB-Sgm" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="w9o-Gp-ivt"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="WeightTextField" destination="lso-Ty-xfR" id="764-ed-Mdr"/>
+                        <outlet property="ageTextFIeld" destination="C6p-b1-N1a" id="Eit-3p-IYj"/>
+                        <outlet property="heightLabel" destination="9Me-WB-Sgm" id="9fR-sj-bSL"/>
+                        <outlet property="heightTextField" destination="VqN-CZ-dqx" id="ZBx-nm-1n8"/>
+                        <outlet property="weightLabel" destination="aFu-GM-gXn" id="bh4-bt-Rtb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="babyoutline.png" width="640" height="640"/>
+    </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="heightButton:"/>
+                <relationship kind="action" name="milestonesButton:"/>
+                <relationship kind="action" name="weightButton:"/>
+                <relationship kind="outlet" name="ageTextFIeld" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="heightLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="heightTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="weightLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="weightTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
