@@ -28,6 +28,7 @@
 @synthesize weightChartUse;
 @synthesize heightChartUse;
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
