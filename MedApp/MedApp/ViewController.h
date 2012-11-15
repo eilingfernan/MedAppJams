@@ -8,7 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController<UITextFieldDelegate>
+@interface ViewController : UIViewController<UITextFieldDelegate ,UIPickerViewDataSource , UIPickerViewDelegate>
+
+{
+    IBOutlet UIPickerView *singlePickerComponent;
+    NSArray *ageData;
+}
+@property(nonatomic , retain) UIPickerView *singlePickerComponent;
+@property(nonatomic , retain) NSArray *ageData;
+
 
 @property (weak, nonatomic) IBOutlet UITextField *ageTextFIeld;
 @property (weak, nonatomic) IBOutlet UITextField *heightTextField;
@@ -25,6 +33,8 @@
 
 @property (strong, nonatomic) NSMutableDictionary *weightChartUse;
 @property (strong, nonatomic)NSMutableDictionary *heightChartUse;
+
+
 
 - (IBAction)submitButton:(id)sender;
 - (IBAction)milestonesButton:(id)sender;

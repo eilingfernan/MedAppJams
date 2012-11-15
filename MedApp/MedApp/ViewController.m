@@ -27,7 +27,8 @@
 @synthesize firstScreen;
 @synthesize weightChartUse;
 @synthesize heightChartUse;
-
+@synthesize singlePickerComponent;
+@synthesize ageData;
 
 - (void)viewDidLoad
 {
@@ -38,6 +39,9 @@
     self.ageTextFIeld.delegate = self;
     self.weightTextField.delegate = self;
     
+    //Picker
+    NSArray *array1 = [[NSArray alloc] initWithObjects:@"Female",@"Male",nil];
+    self.ageData = array1;
     
     //Initialize dictionary
     //Boy Weight chart, variable name is corespoding to age, e.g. bw0 is for boy with age 0, bw1 for boy with age 1, etc..
@@ -120,7 +124,8 @@
     weightChartG = [[NSMutableDictionary alloc]initWithObjectsAndKeys:
                     gw0, [NSNumber numberWithInt:0],
                                        nil];
-
+    weightChartUse = weightChartB;
+    heightChartUse = heightChartB;
 
 }
 
@@ -234,7 +239,7 @@ void submitAll(UITextField *ageTextFIeld, UITextField *heightTextField, UILabel 
     
     //submitAll(ageTextFIeld, heightTextField, heightLabel, weightTextField, weightLabel);
    
-       double distance = 0;
+    double distance = 0;
     double weight = round(weightTextField.text.doubleValue * 0.453592 * 10)/10.0 ;
     NSMutableDictionary *wTemp = [weightChartUse objectForKey:[NSNumber numberWithInt:ageTextFIeld.text.intValue]];
     while([wTemp objectForKey:[NSString stringWithFormat:@"%.1f", weight + distance]] == nil
@@ -296,4 +301,27 @@ void submitAll(UITextField *ageTextFIeld, UITextField *heightTextField, UILabel 
     return [textField resignFirstResponder];
 }
 
+#pragma mark Picker data source methods
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+-(NSInteger)pickerView:(UIPickerView *)pickerView
+numberOfRowsInComponent:(NSInteger)component
+{
+    
+    return [ageData count];
+}
+
+
+#pragma mark Picker delegate method
+-(NSString *)pickerView:(UIPickerView *)pickerView
+            titleForRow:(NSInteger)row
+           forComponent:(NSInteger)component
+{
+    
+    return [ageData objectAtIndex:row];
+    
+}
 @end

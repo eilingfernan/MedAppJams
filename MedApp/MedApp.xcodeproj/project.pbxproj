@@ -19,6 +19,7 @@
 		5552412F1651FEC500E206F3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5552412E1651FEC500E206F3 /* Default-568h@2x.png */; };
 		555241321651FEC500E206F3 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 555241301651FEC500E206F3 /* MainStoryboard.storyboard */; };
 		555241351651FEC500E206F3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555241341651FEC500E206F3 /* ViewController.m */; };
+		55559EF01654BD5A0061BEBE /* appjam_girl(1).png in Resources */ = {isa = PBXBuildFile; fileRef = 55559EEF1654BD5A0061BEBE /* appjam_girl(1).png */; };
 		55BC7B781654991500738F67 /* boy.png in Resources */ = {isa = PBXBuildFile; fileRef = 55BC7B761654991500738F67 /* boy.png */; };
 		55BC7B791654991500738F67 /* girl.png in Resources */ = {isa = PBXBuildFile; fileRef = 55BC7B771654991500738F67 /* girl.png */; };
 /* End PBXBuildFile section */
@@ -41,6 +42,7 @@
 		555241311651FEC500E206F3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		555241331651FEC500E206F3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		555241341651FEC500E206F3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		55559EEF1654BD5A0061BEBE /* appjam_girl(1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appjam_girl(1).png"; sourceTree = "<group>"; };
 		55BC7B761654991500738F67 /* boy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boy.png; sourceTree = "<group>"; };
 		55BC7B771654991500738F67 /* girl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = girl.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,6 +64,7 @@
 		5513BF5416533CEE00AB10A8 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				55559EEF1654BD5A0061BEBE /* appjam_girl(1).png */,
 				55BC7B761654991500738F67 /* boy.png */,
 				55BC7B771654991500738F67 /* girl.png */,
 				5513BF5116533CCB00AB10A8 /* babyoutline.png */,
@@ -183,6 +186,7 @@
 				5513BF5216533CCB00AB10A8 /* babyoutline.png in Resources */,
 				55BC7B781654991500738F67 /* boy.png in Resources */,
 				55BC7B791654991500738F67 /* girl.png in Resources */,
+				55559EF01654BD5A0061BEBE /* appjam_girl(1).png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
