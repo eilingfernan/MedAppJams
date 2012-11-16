@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  BodyView.h
 //  App2
 //
 //  Created by Eiling Fernandez on 11/11/12.
@@ -7,13 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Setting.h"
 
-@interface ViewController : UIViewController<UITextFieldDelegate ,UIPickerViewDataSource , UIPickerViewDelegate>
+@interface BodyView: UIViewController
 
-{
-    IBOutlet UIPickerView *singlePickerComponent;
-    NSArray *ageData;
-}
 @property(nonatomic , retain) UIPickerView *singlePickerComponent;
 @property(nonatomic , retain) NSArray *ageData;
 
@@ -32,7 +29,9 @@
 @property (strong, nonatomic) IBOutlet UISegmentedControl *gender;
 
 @property (strong, nonatomic) NSMutableDictionary *weightChartUse;
-@property (strong, nonatomic)NSMutableDictionary *heightChartUse;
+@property (strong, nonatomic) NSMutableDictionary *heightChartUse;
+@property (strong, nonatomic) IBOutlet UILabel *heightType;
+@property (strong, nonatomic) IBOutlet UILabel *weightType;
 
 
 

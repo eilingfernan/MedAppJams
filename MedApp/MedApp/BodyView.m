@@ -1,18 +1,19 @@
 //
-//  ViewController.m
+//  BodyView.m
 //  MedApp
 //
 //  Created by Eiling Fernandez on 11/11/12.
 //  Copyright (c) 2012 UCI. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "BodyView.h"
+#import "Setting.h"
 
-@interface ViewController ()
+@interface BodyView ()
 
 @end
 
-@implementation ViewController
+@implementation BodyView
 
 @synthesize heightTextField;
 @synthesize ageTextFIeld;
@@ -29,34 +30,17 @@
 @synthesize heightChartUse;
 @synthesize singlePickerComponent;
 @synthesize ageData;
-
+@synthesize heightType;
+@synthesize weightType;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	// Do any additional setup after loading the view, typically from a n
     
-    self.heightTextField.delegate = self;
-    self.ageTextFIeld.delegate = self;
-    self.weightTextField.delegate = self;
-    
-    //Picker
-    NSArray *array1 = [[NSArray alloc] initWithObjects:@"Female",@"Male",nil];
-    self.ageData = array1;
     
     //Initialize dictionary
     //Boy Weight chart, variable name is corespoding to age, e.g. bw0 is for boy with age 0, bw1 for boy with age 1, etc..
-    NSMutableDictionary *bw0 = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-                              @"3rd Percentile for Weight.", @"2.3",
-                              @"5th Percentile for Weight.", @"2.5",
-                              @"10th Percentile for Weight.", @"2.7",
-                              @"25th Percentile for Weight.", @"3.1",
-                              @"50th Percentile for Weight.", @"3.5",
-                              @"75th Percentile for Weight.", @"3.8",
-                              @"90th Percentile for Weight.", @"4.1",
-                              @"95th Percentile for Weight.", @"4.3",
-                              @"97th Percentile for Weight.", @"4.4",
-                                  @"BOY", @"3.6",
-                               nil];
+    
     
     NSMutableDictionary *bw1 = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
                                @"3rd Percentile for Weight.", @"3.6",
@@ -70,11 +54,23 @@
                                @"97th Percentile for Weight.", @"6.1",
                                nil];
     
-    
+    NSMutableDictionary *bw0 = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+                                @"3rd Percentile for Weight.", @"2.3",
+                                @"5th Percentile for Weight.", @"2.5",
+                                @"10th Percentile for Weight.", @"2.7",
+                                @"25th Percentile for Weight.", @"3.1",
+                                @"50th Percentile for Weight.", @"3.5",
+                                @"75th Percentile for Weight.", @"3.8",
+                                @"90th Percentile for Weight.", @"4.1",
+                                @"95th Percentile for Weight.", @"4.3",
+                                @"97th Percentile for Weight.", @"4.4",
+                                @"BOY", @"3.6",
+                                nil];
     weightChartB = [[NSMutableDictionary alloc]initWithObjectsAndKeys:
                     bw0, [NSNumber numberWithInt:0],
                     bw1, [NSNumber numberWithInt:1],
                     nil];
+    
     
     //Boy Height Chart.
     NSMutableDictionary *bh0 = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
@@ -147,93 +143,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-void submitAll(UITextField *ageTextFIeld, UITextField *heightTextField, UILabel *heightLabel, UITextField *weightTextField, UILabel *weightLabel) {
-    int ageInt = [ageTextFIeld.text intValue];
-    int heightInt = [heightTextField.text intValue];
-    int weightInt = [weightTextField.text intValue];
-
-    
-    if(ageInt == 0){
-        
-        switch(heightInt){
-            case 15:
-                heightLabel.text = @"2 nd Percentile";
-                break;
-            case 16:
-                heightLabel.text = @"3 rd Percentile";
-                break;
-            case 17:
-                heightLabel.text = @"4 th Percentile";
-                break;
-            case 18:
-                heightLabel.text = @"5 th Percentile";
-                break;
-            case 19:
-                heightLabel.text = @"6 th Percentile";
-                break;
-        }
-        switch(weightInt){
-            case 15:
-                weightLabel.text = @"2 nd Percentile";
-                break;
-            case 16:
-                weightLabel.text = @"3 rd Percentile";
-                break;
-            case 17:
-                weightLabel.text = @"4 th Percentile";
-                break;
-            case 18:
-                weightLabel.text = @"5 th Percentile";
-                break;
-            case 19:
-                weightLabel.text = @"6 th Percentile";
-                break;
-        }
-
-        
-    }
-    
-    if(ageInt == 1){
-        
-        switch(heightInt){
-            case 15:
-                heightLabel.text = @"7 th Percentile";
-                break;
-            case 16:
-                heightLabel.text = @"8 th Percentile";
-                break;
-            case 17:
-                heightLabel.text = @"9 th Percentile";
-                break;
-            case 18:
-                heightLabel.text = @"10 th Percentile";
-                break;
-            case 19:
-                heightLabel.text = @"11 th Percentile";
-                break;
-        }
-        
-        switch(weightInt){
-            case 15:
-                weightLabel.text = @"7 th Percentile";
-                break;
-            case 16:
-                weightLabel.text = @"8 th Percentile";
-                break;
-            case 17:
-                weightLabel.text = @"9 th Percentile";
-                break;
-            case 18:
-                weightLabel.text = @"10 th Percentile";
-                break;
-            case 19:
-                weightLabel.text = @"11 th Percentile";
-                break;
-        }
-        
-    }
-    
-    }
 
 - (IBAction)submitButton:(id)sender {
     
