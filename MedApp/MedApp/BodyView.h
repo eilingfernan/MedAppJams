@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Setting.h"
+#import "Model.h"
 
 @interface BodyView: UIViewController
 
@@ -32,6 +33,8 @@
 @property (strong, nonatomic) NSMutableDictionary *heightChartUse;
 @property (strong, nonatomic) IBOutlet UILabel *heightType;
 @property (strong, nonatomic) IBOutlet UILabel *weightType;
+
+
 
 
 

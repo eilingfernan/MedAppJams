@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Model.h"
 @interface LogIn : UIViewController
 @property (strong, nonatomic) IBOutlet UITextField *Name;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *Gender;

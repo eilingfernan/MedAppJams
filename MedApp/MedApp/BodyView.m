@@ -32,11 +32,17 @@
 @synthesize ageData;
 @synthesize heightType;
 @synthesize weightType;
+
+static int weightModifier;
+static int heightModifier;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a n
     
+        
+    //if(setting.weightSetting.selectedSegmentIndex == 0)
+      //  weightType.text = setting.stringForWeightUse;
     
     //Initialize dictionary
     //Boy Weight chart, variable name is corespoding to age, e.g. bw0 is for boy with age 0, bw1 for boy with age 1, etc..
@@ -103,7 +109,7 @@
                     bh0, [NSNumber numberWithInt:0],
                     bh1, [NSNumber numberWithInt:1],
                     nil];
-    
+   
     //Girl Weight Chart.
     NSMutableDictionary *gw0 = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
                                 @"3rd Percentile for Height.", @"2.4",
@@ -125,6 +131,27 @@
 
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    weightType.text = [[Model uniqueModel] weightSetting];
+    
+   /* if([[[Setting uniqueSetting] weightSetting] selectedSegmentIndex] == 0)
+    {
+        weightModifier = 1;
+        weightType.text = @"(Kilogram)";}
+    else{
+        weightModifier = 0.453592;
+        weightType.text = @"(Pound)";}
+    
+    if([[[Setting uniqueSetting] heightSetting] selectedSegmentIndex] == 0)
+    {
+        heightModifier = 1;
+        heightType.text = @"(Centimeter)";}
+    else{
+        heightModifier = 2.54;
+        heightType.text = @"(Inch)";}*/
+
+}
 - (void)viewDidUnload
 {
     [self setHeightLabel:nil];
@@ -132,6 +159,7 @@
     [self setHeightTextField:nil];
     [self setAgeTextFIeld:nil];
     [self setWeightTextField:nil];
+    [self setWeightType:nil];
     
     //NEED TO DESTROY DICTIONARIES LATER.
     [super viewDidUnload];
@@ -149,7 +177,7 @@
     //submitAll(ageTextFIeld, heightTextField, heightLabel, weightTextField, weightLabel);
    
     double distance = 0;
-    double weight = round(weightTextField.text.doubleValue * 0.453592 * 10)/10.0 ;
+    double weight = round(weightTextField.text.doubleValue * weightModifier * 10)/10.0 ;
     NSMutableDictionary *wTemp = [weightChartUse objectForKey:[NSNumber numberWithInt:ageTextFIeld.text.intValue]];
     while([wTemp objectForKey:[NSString stringWithFormat:@"%.1f", weight + distance]] == nil
           &&[wTemp objectForKey:[NSString stringWithFormat:@"%.1f", weight - distance]] == nil)
@@ -167,7 +195,7 @@
     }
     
     distance = 0;
-    double height = round(heightTextField.text.doubleValue * 2.54 * 10)/10.0 ;
+    double height = round(heightTextField.text.doubleValue * heightModifier * 10)/10.0 ;
     NSMutableDictionary *hTemp = [heightChartB objectForKey:[NSNumber numberWithInt:ageTextFIeld.text.intValue]];
     while([hTemp objectForKey:[NSString stringWithFormat:@"%.1f", height + distance]] == nil
           &&[hTemp objectForKey:[NSString stringWithFormat:@"%.1f", height - distance]] == nil)
@@ -188,9 +216,6 @@
     
 }
 
-- (IBAction)milestonesButton:(id)sender {
-}
-
 - (IBAction)genderChange:(id)sender {
     
     if(self.gender.selectedSegmentIndex == 0){
@@ -208,29 +233,5 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     return [textField resignFirstResponder];
-}
-
-#pragma mark Picker data source methods
--(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
-{
-    return 1;
-}
-
--(NSInteger)pickerView:(UIPickerView *)pickerView
-numberOfRowsInComponent:(NSInteger)component
-{
-    
-    return [ageData count];
-}
-
-
-#pragma mark Picker delegate method
--(NSString *)pickerView:(UIPickerView *)pickerView
-            titleForRow:(NSInteger)row
-           forComponent:(NSInteger)component
-{
-    
-    return [ageData objectAtIndex:row];
-    
 }
 @end

@@ -8,6 +8,7 @@
 
 #import "Setting.h"
 
+
 @interface Setting ()
 
 @end
@@ -15,6 +16,7 @@
 @implementation Setting
 @synthesize weightSetting;
 @synthesize heightSetting;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,7 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	// Do any additional setup after loading the view
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,7 +39,7 @@
     // Dispose of any resources that can be recreated.
 }
 
--(NSString *) weightSetting
+-(NSString *) stringForWeightUse
 {
     if(weightSetting.selectedSegmentIndex == 0)
         return @"Kilogram";
@@ -45,11 +47,16 @@
         return @"Pound";
 }
 
--(NSString *) heightSetting
+-(NSString *) stringForHeightUse
 {
     if(weightSetting.selectedSegmentIndex == 0)
         return @"Centimeter";
     else
         return @"Inch";
+    
+}
+
+- (IBAction)testAction:(id)sender {
+    [[Model uniqueModel] changeValue:@"KILO"];
 }
 @end

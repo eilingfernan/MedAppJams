@@ -22,6 +22,7 @@
 		55559EF01654BD5A0061BEBE /* appjam_girl(1).png in Resources */ = {isa = PBXBuildFile; fileRef = 55559EEF1654BD5A0061BEBE /* appjam_girl(1).png */; };
 		556D5B251655C8540059668E /* LogIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 556D5B241655C8540059668E /* LogIn.m */; };
 		556D5B2C1655E1270059668E /* Setting.m in Sources */ = {isa = PBXBuildFile; fileRef = 556D5B2B1655E1270059668E /* Setting.m */; };
+		556D5B2F16560F100059668E /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 556D5B2E16560F100059668E /* Model.m */; };
 		55BC7B781654991500738F67 /* boy.png in Resources */ = {isa = PBXBuildFile; fileRef = 55BC7B761654991500738F67 /* boy.png */; };
 		55BC7B791654991500738F67 /* girl.png in Resources */ = {isa = PBXBuildFile; fileRef = 55BC7B771654991500738F67 /* girl.png */; };
 /* End PBXBuildFile section */
@@ -49,6 +50,8 @@
 		556D5B241655C8540059668E /* LogIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogIn.m; sourceTree = "<group>"; };
 		556D5B2A1655E1270059668E /* Setting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Setting.h; sourceTree = "<group>"; };
 		556D5B2B1655E1270059668E /* Setting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Setting.m; sourceTree = "<group>"; };
+		556D5B2D16560F100059668E /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		556D5B2E16560F100059668E /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
 		55BC7B761654991500738F67 /* boy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boy.png; sourceTree = "<group>"; };
 		55BC7B771654991500738F67 /* girl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = girl.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,6 +121,8 @@
 				556D5B241655C8540059668E /* LogIn.m */,
 				556D5B2A1655E1270059668E /* Setting.h */,
 				556D5B2B1655E1270059668E /* Setting.m */,
+				556D5B2D16560F100059668E /* Model.h */,
+				556D5B2E16560F100059668E /* Model.m */,
 				5552411F1651FEC500E206F3 /* Supporting Files */,
 			);
 			path = MedApp;
@@ -212,6 +217,7 @@
 				555241351651FEC500E206F3 /* BodyView.m in Sources */,
 				556D5B251655C8540059668E /* LogIn.m in Sources */,
 				556D5B2C1655E1270059668E /* Setting.m in Sources */,
+				556D5B2F16560F100059668E /* Model.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
