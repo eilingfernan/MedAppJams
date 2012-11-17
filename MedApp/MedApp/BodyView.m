@@ -24,8 +24,8 @@
 @synthesize heightChartB;
 @synthesize weightChartG;
 @synthesize heightChartG;
-@synthesize gender;
-@synthesize firstScreen;
+
+@synthesize bodyPic;
 @synthesize weightChartUse;
 @synthesize heightChartUse;
 @synthesize singlePickerComponent;
@@ -126,31 +126,36 @@ static int heightModifier;
     weightChartG = [[NSMutableDictionary alloc]initWithObjectsAndKeys:
                     gw0, [NSNumber numberWithInt:0],
                                        nil];
-    weightChartUse = weightChartB;
-    heightChartUse = heightChartB;
+ 
 
 }
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    self.checkGender;
     weightType.text = [[Model uniqueModel] weightSetting];
+    heightType.text = [[Model uniqueModel] heightSetting];
+    weightModifier = [[Model uniqueModel] getWeightModifier];
+    heightModifier = [[Model uniqueModel] getHeightModifier];
     
-   /* if([[[Setting uniqueSetting] weightSetting] selectedSegmentIndex] == 0)
-    {
-        weightModifier = 1;
-        weightType.text = @"(Kilogram)";}
-    else{
-        weightModifier = 0.453592;
-        weightType.text = @"(Pound)";}
-    
-    if([[[Setting uniqueSetting] heightSetting] selectedSegmentIndex] == 0)
-    {
-        heightModifier = 1;
-        heightType.text = @"(Centimeter)";}
-    else{
-        heightModifier = 2.54;
-        heightType.text = @"(Inch)";}*/
 
+    
+  
+}
+-(void) checkGender
+{
+    if([[[Model uniqueModel] gender] isEqualToString:@"Boy"])
+    {
+        bodyPic.image = [UIImage imageNamed:@"BodyView_boy.png"];
+        weightChartUse= weightChartB;
+        heightChartUse= heightChartB;
+    }
+    else
+    {
+        bodyPic.image = [UIImage imageNamed:@"BodyView_girl.png"];
+        weightChartUse= weightChartG;
+        heightChartUse= heightChartG;
+    }
 }
 - (void)viewDidUnload
 {
@@ -216,20 +221,9 @@ static int heightModifier;
     
 }
 
-- (IBAction)genderChange:(id)sender {
+
     
-    if(self.gender.selectedSegmentIndex == 0){
-        weightChartUse= weightChartB;
-        heightChartUse= weightChartB;
-        firstScreen.image = [UIImage imageNamed:@"boy.png"];}
-    else{
-        weightChartUse = weightChartG;
-        heightChartUse = weightChartG;
-        firstScreen.image = [UIImage imageNamed:@"girl.png"];}
-    
- 
-    
-}
+
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     return [textField resignFirstResponder];

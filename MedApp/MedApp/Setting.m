@@ -38,25 +38,42 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
--(NSString *) stringForWeightUse
-{
-    if(weightSetting.selectedSegmentIndex == 0)
-        return @"Kilogram";
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if([[[Model uniqueModel] weightSetting] isEqualToString:@"(Kilogram)"])
+        weightSetting.selectedSegmentIndex = 0;
     else
-        return @"Pound";
+        weightSetting.selectedSegmentIndex = 1;
+    if([[[Model uniqueModel] heightSetting] isEqualToString:@"(Centimeter)"])
+        heightSetting.selectedSegmentIndex = 0;
+    else
+        heightSetting.selectedSegmentIndex = 1;
 }
 
--(NSString *) stringForHeightUse
-{
+
+
+- (IBAction)changeWeightSetting:(id)sender {
     if(weightSetting.selectedSegmentIndex == 0)
-        return @"Centimeter";
+    {
+        [[Model uniqueModel] changeWeightSetting:@"(Kilogram)"];
+        [[Model uniqueModel] changeWeightModifier:1];
+        
+    }
     else
-        return @"Inch";
-    
+        [[Model uniqueModel] changeWeightSetting:@"(Pound)"];
+        [[Model uniqueModel] changeWeightModifier:0.453592];
+
 }
 
-- (IBAction)testAction:(id)sender {
-    [[Model uniqueModel] changeValue:@"KILO"];
+- (IBAction)changeHeightSetting:(id)sender {
+    if(heightSetting.selectedSegmentIndex == 0)
+    {
+        [[Model uniqueModel] changeHeightSetting:@"(Centimeter)"];
+        [[Model uniqueModel] changeHeightModifier:1];
+        
+    }
+    else
+        [[Model uniqueModel] changeHeightSetting:@"(Inch)"];
+        [[Model uniqueModel] changeHeightModifier:2.54];
 }
 @end

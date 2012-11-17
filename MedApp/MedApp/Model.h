@@ -10,9 +10,21 @@
 
 @interface Model : NSObject
 @property (strong, nonatomic) NSString *weightSetting;
-@property (strong, nonatomic) NSNumber *test;
+@property (strong, nonatomic) NSString *heightSetting;
+@property (strong, nonatomic) NSString *gender;
+@property (strong, nonatomic) NSMutableDictionary *log;
+@property BOOL logIn;
 +(Model *) uniqueModel;
-
 -(NSString *) returnWeightSetting;
--(void) changeValue:(NSString*) var;
+-(void) changeGender:(NSString*) _gender;
+-(void) changeHeightSetting:(NSString*) _heightSetting;
+-(void) changeWeightSetting:(NSString*) _weightSetting;
+-(void) changeWeightModifier:(int) modifier;
+-(void) changeHeightModifier:(int) modifier;
+-(int) getWeightModifier;
+-(int) getHeightModifier;
+-(void) setLogin:(BOOL) signal;
+-(BOOL) checkRecord:(NSString*) recordName;
+-(void) createNewRecord:(NSString*) newName;
 @end
+

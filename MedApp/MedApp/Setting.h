@@ -11,8 +11,9 @@
 @interface Setting : UIViewController
 @property (strong, nonatomic) IBOutlet UISegmentedControl *weightSetting;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *heightSetting;
--(NSString *) stringForWeightUse;
--(NSString *) stringForHeightUse;
-- (IBAction)testAction:(id)sender;
+-(IBAction)changeHeightSetting:(id)sender;
+-(IBAction)changeWeightSetting:(id)sender;
+
+
 @end
 

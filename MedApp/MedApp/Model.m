@@ -10,8 +10,13 @@
 
 @implementation Model
 @synthesize weightSetting;
-@synthesize test;
+@synthesize heightSetting;
+@synthesize gender;
+@synthesize logIn;
+@synthesize log;
 static Model* _uniqueModel = nil;
+static int weightModifier;
+static int heightModifier;
 +(Model *)uniqueModel
 {
 	@synchronized([Model class])
@@ -38,18 +43,61 @@ static Model* _uniqueModel = nil;
 	self = [super init];
 	if (self != nil) {
 		// initialize stuff here
-        weightSetting = @"POUND";
-      	}
+        gender =@"Boy";
+        weightSetting =@"(Kilogram)";
+        heightSetting=@"(Centimeter)";
+        weightModifier = 1;
+        heightModifier = 1;
+        log = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"RANDOM", @"ryan", nil];
+    }
     
 	return self;
 }
--(NSNumber *) ret
+
+-(void) changeGender:(NSString*) _gender
 {
-    return test;
+    gender = _gender;
 }
--(void) changeValue:(NSString*) var
+-(void) changeHeightSetting:(NSString*) _heightSetting
 {
-    weightSetting = var;
+    heightSetting = _heightSetting;
+}
+-(void) changeWeightSetting:(NSString*) _weightSetting
+{
+    weightSetting = _weightSetting;
+}
+-(void) changeWeightModifier:(int) modifier
+{
+    weightModifier = modifier;
 }
 
+-(void) changeHeightModifier:(int) modifier
+{
+    heightModifier = modifier;
+}
+
+-(int) getWeightModifier
+{
+    return weightModifier;
+}
+-(int) getHeightModifier
+{
+    return heightModifier;
+}
+-(void) setLogin:(BOOL) signal
+{
+    logIn = signal;
+}
+-(BOOL) checkRecord:(NSString*) recordName
+{
+    if([log objectForKey:recordName])
+        return true;
+    else
+        return false;
+}
+-(void) createNewRecord:(NSString*) newName
+{
+    NSMutableDictionary *newRecord;
+    [log setValue:newRecord forKey:newName];
+}
 @end
